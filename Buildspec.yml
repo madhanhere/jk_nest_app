@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - sudo apt install build-essential
+      - echo Installing source NPM dependencies...
+      - npm install -E
+    
+  build:
+    commands:
+      - npm run build
+     # - echo Download environment file from S3
+     # - aws s3 cp s3://$S3_BUCKET/$ENV_FILE $APP_ENV
+
+artifacts:
+    files:
+      - '**/*'

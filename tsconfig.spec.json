@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@auths/*": ["src/guards/*"],
+      "@common/*": ["src/common/*"],
+      "@config/*": ["src/config/*"],
+      "@enum/*": ["src/enum/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@interface/*": ["src/interface/*"],
+      "@libs/*": ["src/libs/*"],
+      "@libs/payment/*": ["src/libs/payment/*"],
+      "@modules/*": ["src/modules/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  }
+}
