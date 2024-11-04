@@ -22,7 +22,7 @@ export class AuthController {
     const response =  await this.authService.validateOAuthLogin(user);
     // res.redirect(`http://localhost.4200/dashboard?token=${response.accessToken}`);
     return res.redirect(
-      `${process.env.GOOGLE_REDIRECT_URL_CLIENT}?jwtUser=${response.accessToken}`,
+      `${process.env.REDIRECT_URL_CLIENT}?jwtUser=${response.accessToken}`,
     );
     // return response;
   }
@@ -42,7 +42,7 @@ export class AuthController {
     const response =  await this.authService.validateOAuthLogin(user);
     // res.redirect(`http://localhost.4200/dashboard?token=${response.accessToken}`);
     return res.redirect(
-      `${process.env.GOOGLE_REDIRECT_URL_CLIENT}?jwtUser=${response.accessToken}`,
+      `${process.env.REDIRECT_URL_CLIENT}?jwtUser=${response.accessToken}`,
     );
   }
 

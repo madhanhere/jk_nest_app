@@ -41,11 +41,17 @@ export class PostsService {
     }
 
     async list(paginationDto: PaginationDTO): Promise<IPostList> {
-        const { page, limit } = paginationDto;
+        
+        const page = paginationDto.page ?? 1;
+        const limit = paginationDto.limit ?? 5;
 
         const [items, totalItems] = await this.postsRepository.findAndCount({
-            skip: ((page || 1) - 1) * (limit || 10),
-            take: (limit || 10),
+            skip: (page - 1) * limit,
+            take: limit,
+            relations: ['user'],
+            order: {
+                "createdAt": "desc"
+            }
           });
 
           return {
