@@ -6,10 +6,9 @@ import { AuthModule } from '@modules/auth/auth.module';
 import { UsersModule } from '@modules/users/users.module';
 import { HealthModule } from '@modules/health/health.module';
 import configuration from '@config/index';
-import { ConfigKey } from '@config/configkeyMapping';
 
 import { PostsModule } from '@modules/posts/posts.module';
-import { DB_CONFIG } from '../dbConfig';
+import { ConfigKey, DB_CONFIG } from '../dbConfig';
 
 @Module({
   imports: [
