@@ -37,7 +37,7 @@ export class PostsService {
     }
     
     async postDetails(postId): Promise<Posts> {
-        return await this.postsRepository.findOne({ where: { id: postId } });
+        return await this.postsRepository.findOne({ where: { id: postId }, relations: ['user'] });
     }
 
     async list(paginationDto: PaginationDTO): Promise<IPostList> {
